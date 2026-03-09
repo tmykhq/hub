@@ -1,0 +1,96 @@
+:root {
+    --rh-red: #EE0000;
+    --rh-dark: #151515;
+    --rh-gray: #f4f4f4;
+    --rh-text: #333333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--rh-gray);
+    color: var(--rh-text);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--rh-dark);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 5px solid var(--rh-red);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--rh-dark);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--rh-red);
+}
+
+/* Main Content Area */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Responsive Grid System */
+.grid-container {
+    display: grid;
+    /* This automatically creates columns that are at least 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Content Cards */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--rh-red);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--rh-dark);
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--rh-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
