@@ -1,12 +1,11 @@
 // search.js
-document.addEventListener('DOMContentLoaded', () => {
-    const filterContainer = document.getElementById('filterContainer');
-    const cards = document.querySelectorAll('.card');
-    const globalSearchResults = document.getElementById('globalSearchResults');
-    const introSection = document.getElementById('introSection');
+const filterContainer = document.getElementById('filterContainer');
+const cards = document.querySelectorAll('.card');
+const globalSearchResults = document.getElementById('globalSearchResults');
+const introSection = document.getElementById('introSection');
 
-    // Global data with tags added to each entry
-    const globalData = [
+// Global data with tags added to each entry
+const globalData = [
         { title: "Red Hat Web Console (Cockpit)", text: "A web-based graphical interface for servers. Manage storage, networks, and containers directly from your browser.", link: "console.html", linkText: "Launch Guide &rarr;", tags: ["Intermediate", "RHEL", "Tool"], tagHTML: '<span class="tag tag-difficulty">Intermediate</span>\n<span class="tag tag-topic">RHEL</span>\n<span class="tag tag-type">Tool</span>' },
         { title: "Red Hat Insights", text: "Proactive analytics and continuous security monitoring for your hybrid cloud deployments.", link: "console.html", linkText: "Explore Insights &rarr;", tags: ["Beginner", "Hybrid Cloud", "Tool"], tagHTML: '<span class="tag tag-difficulty">Beginner</span>\n<span class="tag tag-topic">Hybrid Cloud</span>\n<span class="tag tag-type">Tool</span>' },
         { title: "OpenShift Web Console", text: "Navigate the administrator and developer perspectives to manage pods, deployments, and cluster health.", link: "console.html", linkText: "OpenShift Docs &rarr;", tags: ["Beginner", "OpenShift", "Documentation"], tagHTML: '<span class="tag tag-difficulty">Beginner</span>\n<span class="tag tag-topic">OpenShift</span>\n<span class="tag tag-type">Documentation</span>' },
@@ -133,4 +132,3 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-});
