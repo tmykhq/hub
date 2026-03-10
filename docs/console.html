@@ -46,38 +46,18 @@
 
 
         <div class="grid-container">
+            {% for item in site.data.console %}
             <div class="card">
-                <h3>Red Hat Web Console (Cockpit)</h3>
+                <h3>{{ item.title }}</h3>
                 <div class="tags-container">
-                    <span class="tag tag-difficulty">Intermediate</span>
-                    <span class="tag tag-topic">RHEL</span>
-                    <span class="tag tag-type">Tool</span>
+                    <span class="tag tag-difficulty">{{ item.difficulty }}</span>
+                    <span class="tag tag-topic">{{ item.topic }}</span>
+                    <span class="tag tag-type">{{ item.type }}</span>
                 </div>
-                <p>A web-based graphical interface for servers. Manage storage, networks, and containers directly from your browser.</p>
-                <a href="#">Launch Guide &rarr;</a>
+                <p>{{ item.desc }}</p>
+                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.link_text }} &rarr;</a>
             </div>
-
-            <div class="card">
-                <h3>Red Hat Insights</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Beginner</span>
-                    <span class="tag tag-topic">Hybrid Cloud</span>
-                    <span class="tag tag-type">Tool</span>
-                </div>
-                <p>Proactive analytics and continuous security monitoring for your hybrid cloud deployments.</p>
-                <a href="#">Explore Insights &rarr;</a>
-            </div>
-
-            <div class="card">
-                <h3>OpenShift Web Console</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Beginner</span>
-                    <span class="tag tag-topic">OpenShift</span>
-                    <span class="tag tag-type">Documentation</span>
-                </div>
-                <p>Navigate the administrator and developer perspectives to manage pods, deployments, and cluster health.</p>
-                <a href="#">OpenShift Docs &rarr;</a>
-            </div>
+            {% endfor %}
         </div>
     </main>
 

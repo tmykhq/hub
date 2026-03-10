@@ -9,6 +9,7 @@ const navHTML = `
         <a href="monitoring.html">Monitoring</a>
         <a href="installing.html">Installing</a>
         <a href="support.html">Support</a>
+        <a href="events.html">Events</a>
     </nav>
 `;
 

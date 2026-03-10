@@ -46,49 +46,18 @@
 
 
         <div class="grid-container">
+            {% for item in site.data.support %}
             <div class="card">
-                <h3>Red Hat Customer Portal</h3>
+                <h3>{{ item.title }}</h3>
                 <div class="tags-container">
-                    <span class="tag tag-difficulty">Beginner</span>
-                    <span class="tag tag-topic">Support</span>
-                    <span class="tag tag-type">Web App</span>
+                    <span class="tag tag-difficulty">{{ item.difficulty }}</span>
+                    <span class="tag tag-topic">{{ item.topic }}</span>
+                    <span class="tag tag-type">{{ item.type }}</span>
                 </div>
-                <p>Access the official Knowledgebase, manage your subscriptions, download software, and open support tickets.</p>
-                <a href="#">Visit Portal &rarr;</a>
+                <p>{{ item.desc }}</p>
+                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.link_text }} &rarr;</a>
             </div>
-
-            <div class="card">
-                <h3>Generating an sosreport</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Beginner</span>
-                    <span class="tag tag-topic">RHEL</span>
-                    <span class="tag tag-type">Tool</span>
-                </div>
-                <p>Learn how to safely collect system configuration and diagnostic information from RHEL to provide to Red Hat Support.</p>
-                <a href="#">View Command &rarr;</a>
-            </div>
-
-            <div class="card">
-                <h3>Red Hat Communities</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Beginner</span>
-                    <span class="tag tag-topic">Community</span>
-                    <span class="tag tag-type">Web App</span>
-                </div>
-                <p>Engage with other professionals and Red Hat engineers to share solutions, ask questions, and discuss best practices.</p>
-                <a href="#">Join Discussion &rarr;</a>
-            </div>
-            
-            <div class="card">
-                <h3>Product Documentation</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Beginner</span>
-                    <span class="tag tag-topic">Documentation</span>
-                    <span class="tag tag-type">Documentation</span>
-                </div>
-                <p>Browse the complete, official product documentation for all Red Hat products and versions.</p>
-                <a href="#">Read Docs &rarr;</a>
-            </div>
+            {% endfor %}
         </div>
     </main>
 

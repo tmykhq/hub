@@ -46,38 +46,18 @@
 
 
         <div class="grid-container">
+            {% for item in site.data.security %}
             <div class="card">
-                <h3>SELinux Troubleshooting</h3>
+                <h3>{{ item.title }}</h3>
                 <div class="tags-container">
-                    <span class="tag tag-difficulty">Advanced</span>
-                    <span class="tag tag-topic">RHEL</span>
-                    <span class="tag tag-type">Documentation</span>
+                    <span class="tag tag-difficulty">{{ item.difficulty }}</span>
+                    <span class="tag tag-topic">{{ item.topic }}</span>
+                    <span class="tag tag-type">{{ item.type }}</span>
                 </div>
-                <p>Master Security-Enhanced Linux. Learn how to read audit logs, manage booleans, and adjust file contexts.</p>
-                <a href="#">Read Guide &rarr;</a>
+                <p>{{ item.desc }}</p>
+                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.link_text }} &rarr;</a>
             </div>
-
-            <div class="card">
-                <h3>OpenSCAP Compliance</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Intermediate</span>
-                    <span class="tag tag-topic">RHEL</span>
-                    <span class="tag tag-type">Documentation</span>
-                </div>
-                <p>Automate vulnerability management and evaluate your RHEL systems against security baselines.</p>
-                <a href="#">View Documentation &rarr;</a>
-            </div>
-            
-            <div class="card">
-                <h3>Identity Management (IdM)</h3>
-                <div class="tags-container">
-                    <span class="tag tag-difficulty">Intermediate</span>
-                    <span class="tag tag-topic">RHEL</span>
-                    <span class="tag tag-type">Documentation</span>
-                </div>
-                <p>Centralize authentication, authorization, and DNS for your Linux domain using Red Hat IdM.</p>
-                <a href="#">Setup Tutorial &rarr;</a>
-            </div>
+            {% endfor %}
         </div>
     </main>
 

@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoring - Red Hat Hub</title>
+    <title>Events - Red Hat Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Monitoring & Observability</h1>
-        <p>Keep a pulse on your infrastructure performance and health.</p>
+        <h1>Events & Webinars</h1>
+        <p>Stay up to date with the latest Red Hat announcements, summits, and training sessions.</p>
     </header>
 
     <div id="nav-placeholder"></div>
 
     <main>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search monitoring tools...">
+            <input type="text" id="searchInput" placeholder="Search events...">
         </div>
 
         <div class="filter-container" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
@@ -33,20 +33,18 @@
                 <option value="OpenShift">OpenShift</option>
                 <option value="RHEL">RHEL</option>
                 <option value="Hybrid Cloud">Hybrid Cloud</option>
+                <option value="All">All</option>
             </select>
             <select id="typeFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
                 <option value="">All Types</option>
-                <option value="Article">Article</option>
-                <option value="Documentation">Documentation</option>
-                <option value="Video">Video</option>
-                <option value="Blog">Blog</option>
-                <option value="Tool">Tool</option>
+                <option value="Event">Event</option>
+                <option value="Webinar">Webinar</option>
+                <option value="Training">Training</option>
             </select>
         </div>
 
-
         <div class="grid-container">
-            {% for item in site.data.monitoring %}
+            {% for item in site.data.events %}
             <div class="card">
                 <h3>{{ item.title }}</h3>
                 <div class="tags-container">
