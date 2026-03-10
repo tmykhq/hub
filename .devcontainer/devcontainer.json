@@ -1,0 +1,23 @@
+{
+  "name": "Hub",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
+  "postCreateCommand": "cd docs && bundle install",
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Site",
+      "onAutoForward": "openBrowser"
+    },
+    "35729": {
+      "label": "LiveReload"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.theme-check-vscode",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}
