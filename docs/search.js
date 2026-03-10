@@ -46,30 +46,29 @@ if (searchInput) {
             if (searchTerm.trim() === '') {
                 globalSearchResults.style.display = 'none';
                 if (introSection) introSection.style.display = 'block';
-                return;
-            }
+            } else {
+                globalSearchResults.style.display = 'grid'; // Use grid to match styles
+                if (introSection) introSection.style.display = 'none';
 
-            globalSearchResults.style.display = 'grid'; // Use grid to match styles
-            if (introSection) introSection.style.display = 'none';
+                let matchCount = 0;
+                globalData.forEach(item => {
+                    const searchableText = `${item.title.toLowerCase()} ${item.text.toLowerCase()}`;
+                    if (searchableText.includes(searchTerm)) {
+                        matchCount++;
+                        const cardDiv = document.createElement('div');
+                        cardDiv.className = 'card';
+                        cardDiv.innerHTML = `
+                            <h3>${item.title}</h3>
+                            <p>${item.text}</p>
+                            <a href="${item.link}">${item.linkText}</a>
+                        `;
+                        globalSearchResults.appendChild(cardDiv);
+                    }
+                });
 
-            let matchCount = 0;
-            globalData.forEach(item => {
-                const searchableText = `${item.title.toLowerCase()} ${item.text.toLowerCase()}`;
-                if (searchableText.includes(searchTerm)) {
-                    matchCount++;
-                    const cardDiv = document.createElement('div');
-                    cardDiv.className = 'card';
-                    cardDiv.innerHTML = `
-                        <h3>${item.title}</h3>
-                        <p>${item.text}</p>
-                        <a href="${item.link}">${item.linkText}</a>
-                    `;
-                    globalSearchResults.appendChild(cardDiv);
+                if (matchCount === 0) {
+                    globalSearchResults.innerHTML = '<p style="grid-column: 1 / -1;">No results found.</p>';
                 }
-            });
-
-            if (matchCount === 0) {
-                globalSearchResults.innerHTML = '<p style="grid-column: 1 / -1;">No results found.</p>';
             }
         }
     });
