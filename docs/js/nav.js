@@ -4,6 +4,7 @@ const navHTML = `
     <nav>
         <a href="index.html">Home</a>
         <a href="learning.html">Learning Resources</a>
+        <a href="virtualization.html">Virtualization</a>
         <a href="security.html">Security</a>
         <a href="console.html">Console</a>
         <a href="monitoring.html">Monitoring</a>

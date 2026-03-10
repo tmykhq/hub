@@ -1,0 +1,8 @@
+---
+- title: "Installing Windows from ISO on OpenShift Virtualization"
+  difficulty: "Beginner"
+  topic: "Windows"
+  type: "Guide"
+  desc: "A detailed walkthrough of how to install Windows on OpenShift Virtualization using an ISO image."
+  link: "https://xphyr.net/post/ocpv_installing_windows_from_iso/"
+  link_text: "Read the Guide"
