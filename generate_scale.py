@@ -78,6 +78,30 @@ html_content = """<!DOCTYPE html>
             <input type="text" id="searchInput" placeholder="Search the 200 resources...">
         </div>
 
+        <div class="filter-container" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+            <select id="difficultyFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+                <option value="">All Difficulties</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <select id="topicFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+                <option value="">All Topics</option>
+                <option value="Ansible">Ansible</option>
+                <option value="OpenShift">OpenShift</option>
+                <option value="RHEL">RHEL</option>
+                <option value="Hybrid Cloud">Hybrid Cloud</option>
+            </select>
+            <select id="typeFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+                <option value="">All Types</option>
+                <option value="Article">Article</option>
+                <option value="Documentation">Documentation</option>
+                <option value="Video">Video</option>
+                <option value="Blog">Blog</option>
+                <option value="Tool">Tool</option>
+            </select>
+        </div>
+
         <div class="grid-container">
 """ + "\n".join(cards_html) + """
         </div>
