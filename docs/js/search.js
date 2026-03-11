@@ -8,26 +8,14 @@ const introSection = document.getElementById('introSection');
 
 // Global search data containing all cards from across the site
 const globalData = [
-  {% for item in site.data.learning %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "learning.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
-  {% for item in site.data.console %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "console.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
-  {% for item in site.data.installing %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "installing.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
-  {% for item in site.data.monitoring %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "monitoring.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
-  {% for item in site.data.security %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "security.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
-  {% for item in site.data.support %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "support.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
-  {% for item in site.data.events %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "events.html", linkText: {{ item.link_text | jsonify }} },
+  {% for data_file in site.data %}
+    {% assign namespace = data_file[0] %}
+    {% if namespace == "scale_test" %}{% continue %}{% endif %}
+    {% assign items = data_file[1] %}
+    {% assign page_link = namespace | replace: "_", "-" | append: ".html" %}
+    {% for item in items %}
+  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: {{ page_link | jsonify }}, linkText: {{ item.link_text | jsonify }} },
+    {% endfor %}
   {% endfor %}
 ];
 
@@ -70,7 +58,7 @@ function performSearchAndFilter() {
 
             let matchCount = 0;
             globalData.forEach(item => {
-                const searchableText = `${item.title.toLowerCase()} ${item.text.toLowerCase()}`;
+                const searchableText = `${(item.title || '').toLowerCase()} ${(item.text || '').toLowerCase()}`;
                 if (searchableText.includes(searchTerm)) {
                     matchCount++;
                     const cardDiv = document.createElement('div');
