@@ -1,3 +1,50 @@
+/* Skip link for keyboard accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    background: var(--rh-red);
+    color: white;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Hidden utility (used by JS filtering) */
+.hidden {
+    display: none;
+}
+
+/* Filter select styling */
+.filter-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.filter-select:focus-visible {
+    outline: 2px solid var(--rh-red);
+}
+
 :root {
     --rh-red: #EE0000;
     --rh-dark: #151515;
@@ -39,7 +86,8 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus-visible {
     color: var(--rh-red);
 }
 
@@ -91,8 +139,11 @@ main {
     font-weight: bold;
 }
 
-.card a:hover {
+.card a:hover,
+.card a:focus-visible {
     text-decoration: underline;
+    outline: 2px solid var(--rh-red);
+    outline-offset: 2px;
 }
 
 /* Search Bar Styles */
@@ -115,6 +166,8 @@ main {
 #searchInput:focus {
     border-color: var(--rh-red);
     box-shadow: 0 0 8px rgba(238, 0, 0, 0.2);
+    outline: 2px solid var(--rh-red);
+    outline-offset: 2px;
 }
 
 /* Tag Styles */
@@ -127,7 +180,7 @@ main {
 }
 
 .tag {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 600;
     padding: 0.2rem 0.6rem;
     border-radius: 12px;

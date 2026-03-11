@@ -10,6 +10,7 @@
     <link rel="icon" href="favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <h1>{{ page.header_title }}</h1>
@@ -18,20 +19,22 @@
 
     <div id="nav-placeholder"></div>
 
-    <main>
+    <main id="main-content">
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search {{ page.data_source }}...">
         </div>
 
-        <div class="filter-container" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
-            <select id="difficultyFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+        <div class="filter-container">
+            <label for="difficultyFilter" class="sr-only">Filter by difficulty</label>
+            <select id="difficultyFilter" class="filter-select">
                 <option value="">All Difficulties</option>
                 {% assign difficulties = site.data[page.data_source] | map: "difficulty" | compact | uniq %}
                 {% for d in difficulties %}
                 <option value="{{ d }}">{{ d }}</option>
                 {% endfor %}
             </select>
-            <select id="topicFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+            <label for="topicFilter" class="sr-only">Filter by topic</label>
+            <select id="topicFilter" class="filter-select">
                 <option value="">All Topics</option>
                 {% assign topics = site.data[page.data_source] | map: "topic" | compact | uniq %}
                 {% for t in topics %}
@@ -41,7 +44,8 @@
                 {% endfor %}
                 <option value="All">All</option>
             </select>
-            <select id="typeFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+            <label for="typeFilter" class="sr-only">Filter by type</label>
+            <select id="typeFilter" class="filter-select">
                 <option value="">All Types</option>
                 {% assign types = site.data[page.data_source] | map: "type" | compact | uniq %}
                 {% for ty in types %}

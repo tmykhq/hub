@@ -12,6 +12,7 @@
     <link rel="icon" href="favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <h1>Red Hat Knowledge Hub</h1>
@@ -20,13 +21,12 @@
 
     <div id="nav-placeholder"></div>
 
-    <main>
+    <main id="main-content">
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search the hub...">
         </div>
 
-
-        <div id="globalSearchResults" class="grid-container" style="display: none; margin-top: 20px;"></div>
+        <div id="globalSearchResults" class="grid-container hidden" style="margin-top: 20px;"></div>
 
         <section class="intro" id="introSection">
             <h2>Welcome to the Hub</h2>
@@ -36,6 +36,5 @@
 
     <script src="js/nav.js"></script>
     <script src="js/search.js"></script>
-
 </body>
 </html>

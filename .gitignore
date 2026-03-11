@@ -3,3 +3,4 @@ _site
 .jekyll-cache
 docs/.bundle
 docs/Gemfile.lock
+.worktrees
