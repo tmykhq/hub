@@ -29,9 +29,6 @@ const globalData = [
   {% for item in site.data.events %}
   { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "events.html", linkText: {{ item.link_text | jsonify }} },
   {% endfor %}
-  {% for item in site.data.scale_test %}
-  { title: {{ item.title | jsonify }}, text: {{ item.desc | jsonify }}, link: "scale-test.html", linkText: {{ item.link_text | jsonify }} },
-  {% endfor %}
 ];
 
 const difficultyFilter = document.getElementById('difficultyFilter');
