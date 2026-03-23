@@ -103,6 +103,16 @@ main {
     margin-bottom: 3rem;
 }
 
+.highlights-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.highlights-section h2 {
+    margin-bottom: 2rem;
+    color: var(--rh-dark);
+}
+
 /* Responsive Grid System */
 .grid-container {
     display: grid;
